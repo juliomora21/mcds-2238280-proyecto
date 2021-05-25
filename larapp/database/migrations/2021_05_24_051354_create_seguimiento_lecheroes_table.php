@@ -14,7 +14,13 @@ class CreateSeguimientoLecheroesTable extends Migration
     public function up()
     {
         Schema::create('seguimiento_lecheroes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->id('id_seguimiento_lechero');
+            $table->id('id_bovino');
+            $table->date('fecha_seguimiento_lechero');
+            $table->integer('cantidad_leche');
+            $table->date('fecha_creacion');
+            $table->date('fecha_modificacion');
             $table->timestamps();
         });
     }

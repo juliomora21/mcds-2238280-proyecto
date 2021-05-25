@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeguimientoCrecimientosTable extends Migration
+class CreateRazasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateSeguimientoCrecimientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('seguimiento_crecimientos', function (Blueprint $table) {
+        Schema::create('razas', function (Blueprint $table) {
             $table->increments('id');
-            $table->id('id_seguimiento_crecimiento');
-            $table->id('id_bovino');
-            $table->date('fecha_seguimiento_crecimiento');
-            $table->integer('peso');
-            $table->string('observaciones');
+            $table->id('id_razas');
+            $table->string('raza');
+            $table->string('estado');
             $table->date('fecha_creacion');
             $table->date('fecha_modificacion');
+            $table->id('id_proposito');
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateSeguimientoCrecimientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seguimiento_crecimientos');
+        Schema::dropIfExists('razas');
     }
 }

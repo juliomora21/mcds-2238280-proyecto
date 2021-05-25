@@ -14,7 +14,10 @@ class CreateBovinosGenealogicosTable extends Migration
     public function up()
     {
         Schema::create('bovinos_genealogicos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->id('id_bovino');
+            $table->id('id_bovino_padre');
+            $table->id('id_bovino_madre');
             $table->timestamps();
         });
     }

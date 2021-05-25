@@ -14,7 +14,12 @@ class CreatePropositosTable extends Migration
     public function up()
     {
         Schema::create('propositos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->id('id_proposito');
+            $table->string('proposito');
+            $table->string('estado');
+            $table->date('fecha_creacion');
+            $table->date('fecha_modificacion');
             $table->timestamps();
         });
     }

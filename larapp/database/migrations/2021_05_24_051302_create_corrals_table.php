@@ -14,7 +14,13 @@ class CreateCorralsTable extends Migration
     public function up()
     {
         Schema::create('corrals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->id('id_corral');
+            $table->string('corral');
+            $table->id('id_finca');
+            $table->id('id_pueblo');
+            $table->date('fecha_creacion');
+            $table->date('fecha_modificacion');
             $table->timestamps();
         });
     }

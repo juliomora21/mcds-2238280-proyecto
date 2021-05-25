@@ -14,7 +14,12 @@ class CreateFincasTable extends Migration
     public function up()
     {
         Schema::create('fincas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->id('id_finca');
+            $table->string('finca');
+            $table->string('estado');
+            $table->date('fecha_creacion');
+            $table->date('fecha_modificacion');
             $table->timestamps();
         });
     }

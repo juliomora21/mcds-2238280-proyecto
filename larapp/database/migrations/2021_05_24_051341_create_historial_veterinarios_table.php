@@ -14,7 +14,15 @@ class CreateHistorialVeterinariosTable extends Migration
     public function up()
     {
         Schema::create('historial_veterinarios', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->id('id_historial_veterinario');
+            $table->id('id_bovino');
+            $table->date('fecha_proceso');
+            $table->string('diagnostico');
+            $table->string('medicamentos');
+            $table->string('procedimiento');
+            $table->date('fecha_creacion');
+            $table->date('fecha_modificacion');
             $table->timestamps();
         });
     }
